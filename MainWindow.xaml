@@ -1,0 +1,50 @@
+﻿<Window x:Class="MT_NganVu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MT_NganVu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="578" Width="800">
+    <Canvas>
+        <ListBox x:Name="lstEmp" Height="454" Width="187" Canvas.Left="50" Canvas.Top="54" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.541" FontSize="15" SelectionChanged="lstEmp_SelectionChanged"/>
+        
+        <Label Content="Employee: " Canvas.Left="52" Canvas.Top="23" Height="42" Width="148" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15"/>
+        
+        <GroupBox x:Name="groupBox_Emp_Type" Height="80" Header="Select Type of Employee" Width="484" HorizontalAlignment="Left" Canvas.Left="286" VerticalAlignment="Center" Canvas.Top="28" FontSize="15">
+            <Canvas>
+                <RadioButton x:Name="radio_hourly" Content="Hourly Paid" HorizontalAlignment="Center" Height="26" Width="136" Canvas.Left="10" Canvas.Top="14" VerticalAlignment="Top" IsChecked="True" Click="radio_hourly_Click"/>
+                <RadioButton x:Name="radio_commission" Content="Commission Based" Height="26" Width="157" Canvas.Left="136" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="radio_commission_Checked"/>
+                <RadioButton x:Name="radio_weekly" Content="Weekly Salary" Height="26" Width="158" Canvas.Left="304" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="radio_weekly_Checked"/>
+            </Canvas>
+        </GroupBox>
+
+        <GroupBox x:Name="groupBox_Emp_Info" Height="195" Header="Input the Employee's Information" Width="351" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="286" Canvas.Top="129" FontSize="15">
+            <Canvas>
+                <Label x:Name="label_name" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>
+                <Label x:Name="label_second_empInfo" Content="Hours Wored: " Canvas.Left="10" Canvas.Top="69"/>
+                <Label x:Name="label_third_empInfo" Content="Hourly Wage: " Canvas.Left="10" Canvas.Top="128"/>
+                <TextBox x:Name="textBox_name1" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="20" Width="160" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox_hours_worked1" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="78" Width="160" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox_hourly_wage1" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="136" Width="160" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Canvas>
+        </GroupBox>
+
+        <Button x:Name="btn_cear" Content="Clear" Canvas.Left="661" Canvas.Top="207" FontSize="15" Height="38" Width="103" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btn_cear_Click"/>
+        <Button x:Name="btn_calculate" Content="Calculate" Canvas.Left="661" Canvas.Top="141" FontSize="15" Height="38" Width="103" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btn_calculate_Click"/>
+        <Button x:Name="btn_close" Content="Close" Canvas.Left="661" Canvas.Top="275" FontSize="15" Height="38" Width="103" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btn_close_Click"/>
+
+        <GroupBox x:Name="groupBox_calculated_wage" Height="162" Header="Calculated Wage" Width="478" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="286" Canvas.Top="346" FontSize="15">
+            <Canvas>
+                <Label Content="Gross Earning:" Canvas.Left="10" Canvas.Top="10"/>
+                <Label Content="Tax: " Canvas.Left="10" Canvas.Top="55" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Net Earnings: " Canvas.Left="10" Canvas.Top="102" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox_gross_earning" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="14" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+                <TextBox x:Name="textBox_tax" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="60" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+                <TextBox x:Name="textBox_net_earning" Canvas.Left="141" TextWrapping="Wrap" Canvas.Top="104" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+            </Canvas>
+        </GroupBox>
+
+    </Canvas>
+
+</Window>
